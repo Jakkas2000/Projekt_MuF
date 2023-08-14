@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MuF_Projekt</string>
+    <string name="Monitoring">Monitoring</string>
+    <string name="Feedback">Feedback</string>
+    <string name="textview">TextView</string>
+    <string name="sensory_feedback">Sensory Feedback</string>
+</resources>
