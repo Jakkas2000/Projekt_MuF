@@ -41,10 +41,10 @@ public class NavigationFragment extends Fragment {
 
         final NavController controller = Navigation.findNavController(view);
         view.findViewById(R.id.btnMonitoring).setOnClickListener(btnMonitoring -> {
-            controller.navigate(NavigationFragmentDirections.actionNavigationFragmentToMonitoringFragment3());
+            controller.navigate(NavigationFragmentDirections.actionNavigationToMonitoring());
         });
         view.findViewById(R.id.btnFeedback).setOnClickListener(btnFeedback -> {
-            controller.navigate(NavigationFragmentDirections.actionNavigationFragmentToFeedbackFragment());
+            controller.navigate(NavigationFragmentDirections.actionNavigationToFeedback());
         });
     }
 }
