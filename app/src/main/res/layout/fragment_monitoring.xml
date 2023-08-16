@@ -9,9 +9,53 @@
         android:id="@+id/btnMonitoring"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Navigation" />
+        android:text="go to Navigation" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="#DDDDDD">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Acc_X"
+            android:textSize="20sp"
+            android:textColor="#990000"/>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Acc_Y"
+            android:textSize="20sp"
+            android:textColor="#009900"/>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Acc_Z"
+            android:textSize="20sp"
+            android:textColor="#000099"/>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="time [ms]"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/monitoringRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
