@@ -11,25 +11,25 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdapterDataACC extends RecyclerView.Adapter<AdapterDataACC.DataACCViewHolder>{
-    public DataACCViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_dataacc, parent, false);
-        return new DataACCViewHolder(v);
+public class AdapterDataGYR extends RecyclerView.Adapter<AdapterDataGYR.DataGYRViewHolder>{
+    public DataGYRViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_datagyr, parent, false);
+        return new DataGYRViewHolder(v);
     }
 
-    private List<DataACC> listDA = new ArrayList<>();
+    private List<DataGYR> listDG = new ArrayList<>();
 
     @Override
-    public void onBindViewHolder(@NonNull DataACCViewHolder holder, int position) {
-        DataACC da = listDA.get(position);
+    public void onBindViewHolder(@NonNull DataGYRViewHolder holder, int position) {
+        DataGYR dg = listDG.get(position);
         DecimalFormat decimalFormat = new DecimalFormat("#");
         //%-Operator um den Timestamp zu kürzen, hier jetzt 1000 s Spannbreite der Werte
         // Wenn mehr gewünscht ist, diesen Schritt evtl. weglassen
         //Dient nur der besseren Anzeige in diesem Beispiel
-        String time = decimalFormat.format(da.getTimestamp());
-        String x = decimalFormat.format(da.getAcc_x());
-        String y = decimalFormat.format(da.getAcc_y());
-        String z = decimalFormat.format(da.getAcc_z());
+        String time = decimalFormat.format(dg.getTimestamp());
+        String x = decimalFormat.format(dg.getGyr_x());
+        String y = decimalFormat.format(dg.getGyr_y());
+        String z = decimalFormat.format(dg.getGyr_z());
 
         /*Durch Formating keine Umwandlung mehr zu String notwendig
         //holder.textViewAccDataTime.setText(String.valueOf(accData.getTimestamp()));
@@ -44,28 +44,28 @@ public class AdapterDataACC extends RecyclerView.Adapter<AdapterDataACC.DataACCV
 
     @Override
     public int getItemCount() {
-        return listDA.size();
+        return listDG.size();
     }
 
-    static class DataACCViewHolder extends RecyclerView.ViewHolder{
-        private TextView textViewDataACCX;
-        private TextView textViewDataACCY;
-        private TextView textViewDataACCZ;
-        private TextView textViewDataACCTime;
+    static class DataGYRViewHolder extends RecyclerView.ViewHolder{
+        private TextView textViewDataGYRX;
+        private TextView textViewDataGYRY;
+        private TextView textViewDataGYRZ;
+        private TextView textViewDataGYRTime;
 
-        public DataACCViewHolder(@NonNull View itemView) {
+        public DataGYRViewHolder(@NonNull View itemView) {
             super(itemView);
             //Verweise auf accdata_Layout textViews
-            textViewDataACCX = itemView.findViewById(R.id.textViewDataACCX);
-            textViewDataACCY = itemView.findViewById(R.id.textViewDataACCY);
-            textViewDataACCZ = itemView.findViewById(R.id.textViewDataACCZ);
-            textViewDataACCTime = itemView.findViewById(R.id.textViewDataACCTime);
+            textViewDataGYRX = itemView.findViewById(R.id.textViewDataGYRX);
+            textViewDataGYRY = itemView.findViewById(R.id.textViewDataGYRY);
+            textViewDataGYRZ = itemView.findViewById(R.id.textViewDataGYRZ);
+            textViewDataGYRTime = itemView.findViewById(R.id.textViewDataGYRTime);
         }
     }
 
-    public void setlistDA(List<DataACC> accDataList){
+    public void setlistDG(List<DataGYR> gyrDataList){
 
-        this.listDA = accDataList;
+        this.listDG = gyrDataList;
         notifyDataSetChanged();
     }
 }

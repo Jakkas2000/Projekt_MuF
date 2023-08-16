@@ -12,10 +12,10 @@
         android:label="fragment_navigation">
         <action
             android:id="@+id/action_navigation_to_monitoring"
-            app:destination="@id/fragment_monitoring" />
+            app:destination="@+id/fragment_monitoring" />
         <action
             android:id="@+id/action_navigation_to_feedback"
-            app:destination="@id/fragment_feedback" />
+            app:destination="@+id/fragment_feedback" />
     </fragment>
 
     <fragment
@@ -25,7 +25,7 @@
         android:label="MonitoringFragment" >
         <action
             android:id="@+id/action_monitoring_to_navigation"
-            app:destination="@id/fragment_navigation" />
+            app:destination="@+id/fragment_navigation" />
     </fragment>
     <fragment
         android:id="@+id/fragment_feedback"
@@ -33,6 +33,6 @@
         android:label="fragment_feedback" >
         <action
             android:id="@+id/action_feedback_to_navigation"
-            app:destination="@id/fragment_navigation" />
+            app:destination="@+id/fragment_navigation" />
     </fragment>
 </navigation>

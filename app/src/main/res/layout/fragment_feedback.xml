@@ -2,11 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#990000">
 
-    <TextView
-        android:id="@+id/textView"
+    <Button
+        android:id="@+id/btnFeedback"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/sensory_feedback" />
+        android:text="Go to Navigation" />
+
+    <TextView
+        android:id="@+id/sensorFeedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="Feedback from Sensor"
+        android:textStyle="bold"
+        android:textColor="#ffffff"/>
+
 </LinearLayout>

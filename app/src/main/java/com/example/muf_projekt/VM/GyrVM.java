@@ -7,36 +7,34 @@ import android.os.Looper;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 
-import com.example.muf_projekt.Daten.DataACC;
+import com.example.muf_projekt.Daten.DataGYR;
 import com.example.muf_projekt.DatabaseMUF;
-import com.example.muf_projekt.daoACCData;
+import com.example.muf_projekt.daoGYRData;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.atomic.AtomicBoolean;
 
-public class AccVM extends BaseVM {
+public class GyrVM extends BaseVM {
 
     private ExecutorService executorService;
-    private daoACCData dao;
-    private LiveData<List<DataACC>> listDA;
+    private daoGYRData dao;
+    private LiveData<List<DataGYR>> listDG;
 
-    public AccVM(@NonNull Application app) {
+    public GyrVM(@NonNull Application app) {
         super(app);
 
         DatabaseMUF dbMUF = DatabaseMUF.getInstance(app);
-        dao = dbMUF.getDaoAccData();
-        listDA = dao.getAccData();
+        dao = dbMUF.getDaoGyrData();
+        listDG = dao.getGyrData();
         executorService = Executors.newSingleThreadExecutor();
     }
 
-    public LiveData<List<DataACC>> getListDA(){
-        return listDA;
+    public LiveData<List<DataGYR>> getListDG(){
+        return listDG;
     }
 
-    public void insert(DataACC data){
-        //Exekutor ruft Dao Methode Insert auf
+    public void insert(DataGYR data){
         executorService.execute(()->
                 dao.insert(data)
         );

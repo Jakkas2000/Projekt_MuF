@@ -19,17 +19,11 @@ public class NavigationFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_navigation,container, false);
-
         return v;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
-        RecyclerView recyclerView = view.findViewById(R.id.navRecyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setHasFixedSize(true);
-
         final NavController controller = Navigation.findNavController(view);
         view.findViewById(R.id.btnMonitoring).setOnClickListener(btnMonitoring -> controller.navigate(NavigationFragmentDirections.actionNavigationToMonitoring()));
         view.findViewById(R.id.btnFeedback).setOnClickListener(btnFeedback -> controller.navigate(NavigationFragmentDirections.actionNavigationToFeedback()));

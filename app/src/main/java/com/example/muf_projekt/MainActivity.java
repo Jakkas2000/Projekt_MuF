@@ -10,10 +10,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportFragmentManager()
+        /*getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.container, new NavigationFragment())
                 .commit();
-        // hier den Code für die Interaktion mit den Fragmenten hinzufügen
+        */
     }
-    }
+}
+
