@@ -23,9 +23,7 @@ public class FeedbackFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         final NavController controller = Navigation.findNavController(view);
-        view.findViewById(R.id.btnFeedback).setOnClickListener(buttonFeedNav -> {
-            controller.navigate(FeedbackFragmentDirections.actionFeedbackToNavigation());
-        });
+        view.findViewById(R.id.btnFeedback).setOnClickListener(buttonFeedNav -> controller.navigate(FeedbackFragmentDirections.actionFeedbackToNavigation()));
     }
 }
 

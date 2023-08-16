@@ -18,7 +18,6 @@ public class NavigationFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        //Layout Inflaten
         View v = inflater.inflate(R.layout.fragment_navigation,container, false);
 
         return v;
@@ -32,11 +31,7 @@ public class NavigationFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
 
         final NavController controller = Navigation.findNavController(view);
-        view.findViewById(R.id.btnMonitoring).setOnClickListener(btnMonitoring -> {
-            controller.navigate(NavigationFragmentDirections.actionNavigationToMonitoring());
-        });
-        view.findViewById(R.id.btnFeedback).setOnClickListener(btnFeedback -> {
-            controller.navigate(NavigationFragmentDirections.actionNavigationToFeedback());
-        });
+        view.findViewById(R.id.btnMonitoring).setOnClickListener(btnMonitoring -> controller.navigate(NavigationFragmentDirections.actionNavigationToMonitoring()));
+        view.findViewById(R.id.btnFeedback).setOnClickListener(btnFeedback -> controller.navigate(NavigationFragmentDirections.actionNavigationToFeedback()));
     }
 }

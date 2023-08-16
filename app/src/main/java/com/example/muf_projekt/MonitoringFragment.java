@@ -19,7 +19,7 @@ public class MonitoringFragment extends Fragment {
     private AccVM accVM;
     private AdapterDataACC adapter;
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_monitoring,container, false);;
+        View v = inflater.inflate(R.layout.fragment_monitoring,container, false);
         return v;
     }
 
@@ -38,13 +38,9 @@ public class MonitoringFragment extends Fragment {
         adapter = new AdapterDataACC();
         recyclerView.setAdapter(adapter);
         AccVM accViewModel= new ViewModelProvider(this).get(AccVM.class);
-        accViewModel.getListDA().observe(getViewLifecycleOwner(), DataACC -> {
-            adapter.setlistDA(DataACC);
-        });
+        accViewModel.getListDA().observe(getViewLifecycleOwner(), DataACC -> adapter.setlistDA(DataACC));
 
         final NavController controller = Navigation.findNavController(view);
-        view.findViewById(R.id.btnMonitoring).setOnClickListener(buttonMonNav -> {
-            controller.navigate(MonitoringFragmentDirections.actionMonitoringToNavigation());
-        });
+        view.findViewById(R.id.btnMonitoring).setOnClickListener(buttonMonNav -> controller.navigate(MonitoringFragmentDirections.actionMonitoringToNavigation()));
     }
 }
