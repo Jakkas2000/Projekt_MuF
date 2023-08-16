@@ -9,14 +9,14 @@
         android:id="@+id/btnFeedback"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Go to Navigation" />
+        android:text="@string/Navigation" />
 
     <TextView
         android:id="@+id/sensorFeedback"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="30sp"
-        android:text="Feedback from Sensor"
+        android:text="@string/sensor_feedback"
         android:textStyle="bold"
         android:textColor="#ffffff"/>
 
