@@ -17,7 +17,7 @@ import com.example.muf_projekt.VM.GyrVM;
 
 public class MonitoringFragment extends Fragment {
     private GyrVM gyrVM;
-    private AdapterDataGYR adapter;
+
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_monitoring,container, false);
         return v;
@@ -35,10 +35,14 @@ public class MonitoringFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setHasFixedSize(true);
 
-        adapter = new AdapterDataGYR();
-        recyclerView.setAdapter(adapter);
         GyrVM accViewModel= new ViewModelProvider(this).get(GyrVM.class);
-        accViewModel.getListDG().observe(getViewLifecycleOwner(), DataGYR -> adapter.setlistDG(DataGYR));
+        accViewModel.getListDG().observe(getViewLifecycleOwner(), DataGYR -> {
+            AdapterDataGYR adapter = new AdapterDataGYR();
+            adapter.setlistDG(DataGYR);
+            recyclerView.setAdapter(adapter);
+        });
+
+
 
         final NavController controller = Navigation.findNavController(view);
         view.findViewById(R.id.btnMonitoring).setOnClickListener(buttonMonNav -> controller.navigate(MonitoringFragmentDirections.actionMonitoringToNavigation()));

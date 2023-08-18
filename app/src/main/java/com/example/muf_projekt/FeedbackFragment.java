@@ -63,6 +63,7 @@ private GyrVM gyrVM;
             float gyr_z = event.values[2];
 
             DataGYR dataGYR = new DataGYR(gyr_x,gyr_y,gyr_z, System.currentTimeMillis());
+
             feedbackTV.setText(String.format("x-axis: %f ; y-axis: %f ; z-axis: %f ; ",gyr_x,gyr_y,gyr_z));
             gyrVM.insert(dataGYR);
         }

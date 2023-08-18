@@ -4,7 +4,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 @Entity(tableName = "datagyr")
 public class DataGYR {
-    public DataGYR(float gyr_x, float gyr_y, float gyr_z,long timestamp){
+    public DataGYR(double gyr_x, double gyr_y, double gyr_z,long timestamp){
         this.gyr_x = gyr_x;
         this.gyr_y = gyr_y;
         this.gyr_z = gyr_z;
@@ -13,9 +13,9 @@ public class DataGYR {
     @PrimaryKey(autoGenerate = true)
     private long id;
     private long timestamp;
-    private float gyr_x;
-    private float gyr_y;
-    private float gyr_z;
+    private double gyr_x;
+    private double gyr_y;
+    private double gyr_z;
 
     //ID
     public long getId() {
@@ -33,19 +33,19 @@ public class DataGYR {
         this.timestamp = timestamp;
     }
     //accdata
-    public float getGyr_x() {
+    public double getGyr_x() {
         return gyr_x;
     }
     public void setGyr_x(float gyr_x) {
         this.gyr_x = gyr_x;
     }
-    public float getGyr_y() {
+    public double getGyr_y() {
         return gyr_y;
     }
     public void setGyr_y(float gyr_y) {
         this.gyr_y = gyr_y;
     }
-    public float getGyr_z() {
+    public double getGyr_z() {
         return gyr_z;
     }
     public void setGyr_z(float gyr_z) {

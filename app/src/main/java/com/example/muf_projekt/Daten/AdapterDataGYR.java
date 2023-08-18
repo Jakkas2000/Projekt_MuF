@@ -22,24 +22,24 @@ public class AdapterDataGYR extends RecyclerView.Adapter<AdapterDataGYR.DataGYRV
     @Override
     public void onBindViewHolder(@NonNull DataGYRViewHolder holder, int position) {
         DataGYR dg = listDG.get(position);
-        DecimalFormat decimalFormat = new DecimalFormat("#");
+        //DecimalFormat decimalFormat = new DecimalFormat("0.######");
         //%-Operator um den Timestamp zu kürzen, hier jetzt 1000 s Spannbreite der Werte
         // Wenn mehr gewünscht ist, diesen Schritt evtl. weglassen
         //Dient nur der besseren Anzeige in diesem Beispiel
-        String time = decimalFormat.format(dg.getTimestamp());
-        String x = decimalFormat.format(dg.getGyr_x());
-        String y = decimalFormat.format(dg.getGyr_y());
-        String z = decimalFormat.format(dg.getGyr_z());
+        //String time = decimalFormat.format(dg.getTimestamp());
+        //String x = decimalFormat.format(dg.getGyr_x());
+        //String y = decimalFormat.format(dg.getGyr_y());
+        //String z = decimalFormat.format(dg.getGyr_z());
 
         /*Durch Formating keine Umwandlung mehr zu String notwendig
         //holder.textViewAccDataTime.setText(String.valueOf(accData.getTimestamp()));
         holder.textViewDataACCX.setText(String.valueOf(DataACC.getAcc_x()));
         holder.textViewDataACCY.setText(String.valueOf(DataACC.getAcc_y()));
-        holder.textViewDataACCZ.setText(String.valueOf(DataACC.getAcc_z()));
-        holder.textViewDataACCTime.setText(String.valueOf(DataACC.getTimestamp()));
-        /*holder.textViewAccDataX.setText(x);
-        holder.textViewAccDataY.setText(y);
-        holder.textViewAccDataZ.setText(z);*/
+        holder.textViewDataACCZ.setText(String.valueOf(DataACC.getAcc_z()));*/
+        holder.textViewDataGYRTime.setText(String.valueOf(dg.getTimestamp()));
+        holder.textViewDataGYRX.setText(String.valueOf(dg.getGyr_x()));
+        holder.textViewDataGYRY.setText(String.valueOf(dg.getGyr_y()));
+        holder.textViewDataGYRZ.setText(String.valueOf(dg.getGyr_z()));
     }
 
     @Override

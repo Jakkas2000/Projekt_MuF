@@ -31,7 +31,7 @@ public class GyrVM extends BaseVM {
     }
 
     public LiveData<List<DataGYR>> getListDG(){
-        return listDG;
+        return dao.getGyrData();
     }
 
     public void insert(DataGYR data){
